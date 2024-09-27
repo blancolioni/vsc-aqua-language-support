@@ -1,0 +1,254 @@
+{
+	"assignment": {
+		"prefix": "assignment",
+		"body": "${1:writable} := ${2:expression}",
+		"description": "assignment",
+		"scope": "source.eiffel"
+	},
+	"try-assignment": {
+		"prefix": "assignment",
+		"body": "${1:writable} ?= ${2:expression}",
+		"description": "assignment attempt",
+		"scope": "source.eiffel"
+	},
+	"variable": {
+		"prefix": "var",
+		"body": "${1:constant}: attached ${2:TYPE}",
+		"description": "variable",
+		"scope": "source.eiffel"
+	},
+	"nullable_variable": {
+		"prefix": "null_var",
+		"body": "${1:constant}: detachable ${2:TYPE}",
+		"description": "variable",
+		"scope": "source.eiffel"
+	},
+	"const": {
+		"prefix": "const",
+		"body": "${1:constant}: attached ${2:TYPE} = ${3:value}",
+		"description": "constant",
+		"scope": "source.eiffel"
+	},
+	"create": {
+		"prefix": "new",
+		"body": "create${1: {${2:TYPE}\\}} ${3:writable}.${4:make}",
+		"description": "create",
+		"scope": "source.eiffel"
+	},
+	"check": {
+		"prefix": "check",
+		"body": "check\r\n\t${1:assertion}\r\nend",
+		"description": "check",
+		"scope": "source.eiffel"
+	},
+	"debug": {
+		"prefix": "debug",
+		"body": "debug${1: (${2:debug_key})}\r\n\t${3:instruction}\r\nend",
+		"description": "debug",
+		"scope": "source.eiffel"
+	},
+	"class": {
+		"prefix": "class",
+		"body": "-- ${1:class_name}\r\n\r\nclass\r\n\t${1/(.*)/\\U$0\\E/}\r\ninherit\r\n\r\ncreate\r\n\r\nfeature\r\n\r\ninvariant\r\n\r\nend -- ${1/(.*)/\\U$0\\E/}\r\n",
+		"description": "class",
+		"scope": "source.eiffel"
+	},
+	"expanded_class": {
+		"prefix": "expanded class",
+		"body": "-- ${1:class_name}\r\n\r\nexpanded class\r\n\t${1/(.*)/\\U$0\\E/}\r\ninherit\r\n\r\ncreate\r\n\r\nfeature\r\n\r\ninvariant\r\n\r\nend -- ${1/(.*)/\\U$0\\E/}\r\n",
+		"description": "expanded class",
+		"scope": "source.eiffel"
+	},
+	"abstract_class": {
+		"prefix": "abstract class",
+		"body": "-- ${1:class_name}\r\n\r\ndeferred class\r\n\t${1/(.*)/\\U$0\\E/}\r\ninherit\r\n\r\nfeature\r\n\r\ninvariant\r\n\r\nend -- ${1/(.*)/\\U$0\\E/}\r\n",
+		"description": "deferred class",
+		"scope": "source.eiffel"
+	},
+	"deferred_class": {
+		"prefix": "deferrred class",
+		"body": "-- ${1:class_name}\r\n\r\ndeferred class\r\n\t${1/(.*)/\\U$0\\E/}\r\ninherit\r\n\r\nfeature\r\n\r\ninvariant\r\n\r\nend -- ${1/(.*)/\\U$0\\E/}\r\n",
+		"description": "deferred class",
+		"scope": "source.eiffel"
+	},
+	"inspect": {
+		"prefix": "inspect",
+		"body": "inspect\r\n\t${1:expression}\r\nwhen ${2:choice} then\r\n\t${3:instruction}${4:\r\nelse\r\n\t${5:instruction}}\r\nend",
+		"description": "inspect",
+		"scope": "source.eiffel"
+	},
+	"switch": {
+		"prefix": "switch",
+		"body": "inspect\r\n\t${1:expression}\r\nwhen ${2:choice} then\r\n\t${3:instruction}${4:\r\nelse\r\n\t${5:instruction}}\r\nend",
+		"description": "inspect",
+		"scope": "source.eiffel"
+	},
+		"when": {
+		"prefix": "when",
+		"body": "when ${1:choice} then\r\n\t${2:instruction}",
+		"description": "when",
+		"scope": "source.eiffel"
+	},
+		"case": {
+		"prefix": "case",
+		"body": "when ${1:choice} then\r\n\t${2:instruction}",
+		"description": "when",
+		"scope": "source.eiffel"
+	},
+	"if": {
+		"prefix": "if",
+		"body": "if ${1:boolean_expression} then\r\n\t${2:instruction}${3:\r\nelseif ${4:boolean_expression} then\r\n\t${5:instruction}}${6:\r\nelse\r\n\t${7:instruction}}\r\nend",
+		"description": "if",
+		"scope": "source.eiffel"
+	},
+	"elif": {
+		"prefix": "elif",
+		"body": "elseif ${1:boolean_expression} then\r\n\t${2:instruction}",
+		"description": "elseif",
+		"scope": "source.eiffel"
+	},
+	"elseif": {
+		"prefix": "elseif",
+		"body": "elseif ${1:boolean_expression} then\r\n\t${2:instruction}",
+		"description": "elseif",
+		"scope": "source.eiffel"
+	},
+		"else_if": {
+		"prefix": "else if",
+		"body": "elseif ${1:boolean_expression} then\r\n\t${2:instruction}",
+		"description": "elseif",
+		"scope": "source.eiffel"
+	},
+	"once_fun": {
+		"prefix": "once fun",
+		"body": "${1:routine}${2: (${3:args}: attached ${4:TYPE})}${5:: attached ${6:TYPE}} ${7:\r\n\trequire\r\n\t\t${8:assertion}}${9:\r\n\tlocal\r\n\t\t${10:l}: attached ${11:TYPE}} \r\n\tonce\r\n\t\t${12:instruction}${13:\r\n\tensure\r\n\t\t${14:assertion}}${15:\r\n\trescue\r\n\t\t${16:instruction}}\r\n\tend -- $1",
+		"description": "once routine",
+		"scope": "source.eiffel"
+	},
+	"once_routine": {
+		"prefix": "once routine",
+		"body": "${1:routine}${2: (${3:args}: attached ${4:TYPE})}${5:: attached ${6:TYPE}} ${7:\r\n\trequire\r\n\t\t${8:assertion}}${9:\r\n\tlocal\r\n\t\t${10:l}: attached ${11:TYPE}} \r\n\tonce\r\n\t\t${12:instruction}${13:\r\n\tensure\r\n\t\t${14:assertion}}${15:\r\n\trescue\r\n\t\t${16:instruction}}\r\n\tend -- $1",
+		"description": "once routine",
+		"scope": "source.eiffel"
+	},
+	"fun": {
+		"prefix": "fun",
+		"body": "${1:routine}${2: (${3:args}: attached ${4:TYPE})}${5:: attached ${6:TYPE}} ${7:\r\n\trequire\r\n\t\t${8:assertion}}${9:\r\n\tlocal\r\n\t\t${10:l}: attached ${11:TYPE}} \r\n\tdo\r\n\t\t${12:instruction}${13:\r\n\tensure\r\n\t\t${14:assertion}}${15:\r\n\trescue\r\n\t\t${16:instruction}}\r\n\tend -- $1",
+		"description": "routine",
+		"scope": "source.eiffel"
+	},
+	"routine": {
+		"prefix": "routine",
+		"body": "${1:routine}${2: (${3:args}: attached ${4:TYPE})}${5:: attached ${6:TYPE}} ${7:\r\n\trequire\r\n\t\t${8:assertion}}${9:\r\n\tlocal\r\n\t\t${10:l}: attached ${11:TYPE}} \r\n\tdo\r\n\t\t${12:instruction}${13:\r\n\tensure\r\n\t\t${14:assertion}}${15:\r\n\trescue\r\n\t\t${16:instruction}}\r\n\tend -- $1",
+		"description": "routine",
+		"scope": "source.eiffel"
+	},
+	"deferred_routine": {
+		"prefix": "deferred routine",
+		"body": "${1:routine}${2: (${3:args}: attached ${4:TYPE})}${5:: attached ${6:TYPE}} ${7:\r\n\trequire\r\n\t\t${8:assertion}}\r\n\tdeferred${9:\r\n\tensure\r\n\t\t${10:assertion}}\r\n\tend -- $1",
+		"description": "deferred routine",
+		"scope": "source.eiffel"
+	},
+	"abstract_fun": {
+		"prefix": "abstract fun",
+		"body": "${1:routine}${2: (${3:args}: attached ${4:TYPE})}${5:: attached ${6:TYPE}} ${7:\r\n\trequire\r\n\t\t${8:assertion}}\r\n\tdeferred${9:\r\n\tensure\r\n\t\t${10:assertion}}\r\n\tend -- $1",
+		"description": "deferred routine",
+		"scope": "source.eiffel"
+	},
+	"external_routine": {
+		"prefix": "external routine",
+		"body": "${1:routine}${2: (${3:args}: attached ${4:TYPE})}${5:: attached ${6:TYPE}} ${7:\r\n\trequire\r\n\t\t${8:assertion}}\r\n\texternal\r\n\t\t\"${9:language}\"${10:\r\n\talias\r\n\t\t\"${11:external_name}\"}${12:\r\n\tensure\r\n\t\t${13:assertion}}\r\n\tend -- $1",
+		"description": "external routine",
+		"scope": "source.eiffel"
+	},
+	"export_fun": {
+		"prefix": "export fun",
+		"body": "${1:routine}${2: (${3:args}: attached ${4:TYPE})}${5:: attached ${6:TYPE}} ${7:\r\n\trequire\r\n\t\t${8:assertion}}\r\n\texternal\r\n\t\t\"${9:language}\"${10:\r\n\talias\r\n\t\t\"${11:external_name}\"}${12:\r\n\tensure\r\n\t\t${13:assertion}}\r\n\tend -- $1",
+		"description": "external routine",
+		"scope": "source.eiffel"
+	},
+	"indexing": {
+		"prefix": "indexing",
+		"body": "Indexing\r\n\tProject: \"$TM_FILEPATH\"\r\n\tFile: \"$TM_FILENAME\"\r\n\tDescription: \"${1:description}\"\r\n\tAuthor: \"${2:$USER}\"\r\n\tCopyright: \"© 2006 ${3:${TM_ORGANIZATION_NAME}}\"\r\n\tVersion: 1.0\r\n\tDate: \"`date`\"\r\n\tKeywords: ${4:keywords}\r\n",
+		"description": "indexing",
+		"scope": "source.eiffel"
+	},
+	"for": {
+		"prefix": "for",
+		"body": "from\r\n\t${1:init_instructions}${2:\r\ninvariant\r\n\t${3:truth_before_and_after_every_iteration}}${4:\r\nvariant\r\n\t${5:decreasing_non_negative_expression}}\r\nuntil\r\n\t${6:boolean_expression}\r\nloop\r\n\t${7:instruction}\r\nend",
+		"description": "loop",
+		"scope": "source.eiffel"
+	},
+	"repeat": {
+		"prefix": "repeat",
+		"body": "from\r\n\t${1:init_instructions}${2:\r\ninvariant\r\n\t${3:truth_before_and_after_every_iteration}}${4:\r\nvariant\r\n\t${5:decreasing_non_negative_expression}}\r\nuntil\r\n\t${6:boolean_expression}\r\nloop\r\n\t${7:instruction}\r\nend",
+		"description": "loop",
+		"scope": "source.eiffel"
+	},
+	"foreach": {
+		"prefix": "foreach",
+		"body": "across\r\n\t${1:list} as ${2:i}\r\nloop\r\n\t${3:${2}.item}\r\nend",
+		"description": "loop",
+		"scope": "source.eiffel"
+	},
+	"across": {
+		"prefix": "across",
+		"body": "across\r\n\t${1:list} as ${2:i}\r\nloop\r\n\t${3:${2}.item}\r\nend",
+		"description": "loop",
+		"scope": "source.eiffel"
+	},
+	"foreach_all": {
+		"prefix": "foreach all",
+		"body": "across ${1:list} as ${2:i} all ${3:${2}.item} end",
+		"description": "all",
+		"scope": "source.eiffel"
+	},
+	"foreach_some": {
+		"prefix": "foreach some",
+		"body": "across ${1:list} as ${2:i} some ${3:${2}.item} end",
+		"description": "some",
+		"scope": "source.eiffel"
+	},
+	"retry": {
+		"prefix": "retry",
+		"body": "retry",
+		"description": "retry",
+		"scope": "source.eiffel"
+	},
+	"check_non_null": {
+		"prefix": "check non null",
+		"body": "if attached ${1:variable} as ${2:attached_${1}} then\r\n\t${3:instruction}\r\nend",
+		"description": "",
+		"scope": ""
+	},
+	"if_not_null": {
+		"prefix": "if not null",
+		"body": "if attached ${1:variable} as ${2:attached_${1}} then\r\n\t${3:instruction}\r\nend",
+		"description": "",
+		"scope": ""
+	},
+	"if_non_null": {
+		"prefix": "if non null",
+		"body": "if attached ${1:variable} as ${2:attached_${1}} then\r\n\t${3:instruction}\r\nend",
+		"description": "",
+		"scope": ""
+	},
+	"if_attached": {
+		"prefix": "if attached",
+		"body": "if attached ${1:variable} as ${2:attached_${1}} then\r\n\t${3:instruction}\r\nend",
+		"description": "",
+		"scope": ""
+	},
+	"strip": {
+		"prefix": "strip",
+		"body": "strip(${1:attributes_separated_by_comma}) ~ old strip(${1})",
+		"description": "",
+		"scope": ""
+	},
+	"only": {
+		"prefix": "only",
+		"body": "strip(${1:attributes_separated_by_comma}) ~ old strip(${1})",
+		"description": "",
+		"scope": ""
+	}
+}

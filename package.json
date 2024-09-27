@@ -1,0 +1,42 @@
+{
+  "name": "eiffel-language-support",
+  "publisher": "laszloszerednik",
+  "displayName": "Eiffel Language Support",
+  "description": "Eiffel Language Support - Syntax Highlighting",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.73.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "eiffel",
+        "aliases": [
+          "Eiffel",
+          "eiffel"
+        ],
+        "extensions": [
+          ".e"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "eiffel",
+        "scopeName": "source.eiffel",
+        "path": "./syntaxes/eiffel.tmLanguage"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "eiffel",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+  }
+}
