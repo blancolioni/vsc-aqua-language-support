@@ -47,7 +47,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(Indexing|indexing|deferred|expanded|class|inherit|rename|as|export|undefine|redefine|select|all|create|creation|feature|prefix|infix|separate|frozen|obsolete|local|is|unique|do|once|external|alias|require|ensure|invariant|variant|rescue|retry|like|check|if|else|elseif|then|inspect|when|from|loop|until|debug|not|or|and|xor|implies|old|end|attached|detachable|attribute|across|only|strip)\b</string>
+			<string>\b(Indexing|indexing|deferred|expanded|class|inherit|rename|as|export|undefine|redefine|select|all|create|creation|feature|prefix|infix|separate|frozen|obsolete|local|is|unique|do|once|external|alias|require|ensure|invariant|variant|rescue|retry|like|check|if|else|elseif|then|inspect|when|from|loop|until|debug|not|or|and|xor|implies|old|end|attached|detachable|attribute|across|only|strip|assign|convert)\b</string>
 			<key>name</key>
 			<string>keyword.control.eiffel</string>
 		</dict>

@@ -11,16 +11,46 @@
 		"description": "assignment attempt",
 		"scope": "source.eiffel"
 	},
-	"variable": {
+	"convert_from": {
+		"prefix": "convert_from",
+		"body": "${1:convert}\r\n\t${3:from_${2/(.*)/${1:/downcase}/}}( {${2:TYPE}} )",
+		"description": "",
+		"scope": "source.eiffel"
+	},
+	"convert_to": {
+		"prefix": "convert_to",
+		"body": "${1:convert}\r\n\t${3:to_${2/(.*)/${1:/downcase}/}}: {${2:TYPE}}",
+		"description": "",
+		"scope": "source.eiffel"
+	},
+	"cast": {
+		"prefix": "cast",
+		"body": "{TYPE} value",
+		"description": "",
+		"scope": "source.eiffel"
+	},
+	"property": {
+		"prefix": "property",
+		"body": "${1:attribute_name}: attached ${2:TYPE} assign ${3:$1_setter}\r\n${3}(${4:${1}_}: like ${1}) do ${1} := ${4} end",
+		"description": "",
+		"scope": "source.eiffel"
+	},
+	"attribute": {
+		"prefix": "attribute",
+		"body": "${1:attribute_name}: attached ${2:TYPE}",
+		"description": "attribute",
+		"scope": "source.eiffel"
+	},
+	"var": {
 		"prefix": "var",
-		"body": "${1:constant}: attached ${2:TYPE}",
+		"body": "${1:variable}: attached ${2:TYPE}",
 		"description": "variable",
 		"scope": "source.eiffel"
 	},
-	"nullable_variable": {
+	"null_var": {
 		"prefix": "null_var",
-		"body": "${1:constant}: detachable ${2:TYPE}",
-		"description": "variable",
+		"body": "${1:variable}: detachable ${2:TYPE}",
+		"description": "detachable variable",
 		"scope": "source.eiffel"
 	},
 	"const": {
@@ -29,9 +59,27 @@
 		"description": "constant",
 		"scope": "source.eiffel"
 	},
-	"create": {
-		"prefix": "new",
-		"body": "create${1: {${2:TYPE}\\}} ${3:writable}.${4:make}",
+	"new_statement": {
+		"prefix": "new statement",
+		"body": "create${1:{${2:TYPE}\\}} ${3:writable}.${4:default_create}",
+		"description": "create",
+		"scope": "source.eiffel"
+	},
+	"new_expression": {
+		"prefix": "new expression",
+		"body": "create{${1:TYPE}\\}.${2:default_create}",
+		"description": "create",
+		"scope": "source.eiffel"
+	},
+	"create_statement": {
+		"prefix": "create statement",
+		"body": "create${1:{${2:TYPE}\\}} ${3:writable}.${4:default_create}",
+		"description": "create",
+		"scope": "source.eiffel"
+	},
+	"create_expression": {
+		"prefix": "create expression",
+		"body": "create{${1:TYPE}\\}.${2:default_create}",
 		"description": "create",
 		"scope": "source.eiffel"
 	},
@@ -215,40 +263,124 @@
 		"description": "retry",
 		"scope": "source.eiffel"
 	},
-	"check_non_null": {
-		"prefix": "check non null",
-		"body": "if attached ${1:variable} as ${2:attached_${1}} then\r\n\t${3:instruction}\r\nend",
+	"check_type": {
+		"prefix": "check type",
+		"body": "check attached { ${1:TYPE} } ${2:variable} as ${3:${2}_${1/(.*)/${1:/downcase}/}}} then\r\n\t${4:instruction}\r\nend",
 		"description": "",
-		"scope": ""
+		"scope": "source.eiffel"
+	},
+	"instanceof": {
+		"prefix": "instanceof",
+		"body": "check attached { ${1:TYPE} } ${2:variable} as ${3:${2}_${1/(.*)/${1:/downcase}/}}} then\r\n\t${4:instruction}\r\nend",
+		"description": "",
+		"scope": "source.eiffel"
+	},
+	"check_not_null": {
+		"prefix": "check not null",
+		"body": "check attached ${1:variable} as ${2:attached_${1}} then\r\n\t${3:instruction}\r\nend",
+		"description": "",
+		"scope": "source.eiffel"
+	},
+	"check_attached": {
+		"prefix": "check attached",
+		"body": "check attached ${1:variable} as ${2:attached_${1}} then\r\n\t${3:instruction}\r\nend",
+		"description": "",
+		"scope": "source.eiffel"
 	},
 	"if_not_null": {
 		"prefix": "if not null",
 		"body": "if attached ${1:variable} as ${2:attached_${1}} then\r\n\t${3:instruction}\r\nend",
 		"description": "",
-		"scope": ""
-	},
-	"if_non_null": {
-		"prefix": "if non null",
-		"body": "if attached ${1:variable} as ${2:attached_${1}} then\r\n\t${3:instruction}\r\nend",
-		"description": "",
-		"scope": ""
+		"scope": "source.eiffel"
 	},
 	"if_attached": {
 		"prefix": "if attached",
 		"body": "if attached ${1:variable} as ${2:attached_${1}} then\r\n\t${3:instruction}\r\nend",
 		"description": "",
-		"scope": ""
+		"scope": "source.eiffel"
+	},
+	"throw_if_null": {
+		"prefix": "throw if null",
+		"body": "check attached ${1:variable} as ${2:attached_${1}} then\r\n\t${3:instruction}\r\nend",
+		"description": "",
+		"scope": "source.eiffel"
+	},
+	"throw_if_not_attached": {
+		"prefix": "throw if not attached",
+		"body": "check attached ${1:variable} as ${2:attached_${1}} then\r\n\t${3:instruction}\r\nend",
+		"description": "",
+		"scope": "source.eiffel"
+	},
+	"throw_if_detached": {
+		"prefix": "throw if detached",
+		"body": "check attached ${1:variable} as ${2:attached_${1}} then\r\n\t${3:instruction}\r\nend",
+		"description": "",
+		"scope": "source.eiffel"
 	},
 	"strip": {
 		"prefix": "strip",
 		"body": "strip(${1:attributes_separated_by_comma}) ~ old strip(${1})",
 		"description": "",
-		"scope": ""
+		"scope": "source.eiffel"
 	},
 	"only": {
 		"prefix": "only",
 		"body": "strip(${1:attributes_separated_by_comma}) ~ old strip(${1})",
 		"description": "",
-		"scope": ""
+		"scope": "source.eiffel"
+	},
+	"init_attribute": {
+		"prefix": "init attribute",
+		"body": "${1:attribute_name}: attached ${2:TYPE} attribute Result := create{${2}}${3:.${4:default_create}} end",
+		"description": "",
+		"scope": "source.eiffel"
+	},
+	"private_features": {
+		"prefix": "private features",
+		"body": "feature { NONE }\r\n\t",
+		"description": "",
+		"scope": "source.eiffel"
+	},
+	"private_creates": {
+		"prefix": "private creates",
+		"body": "create { NONE }\r\n\t",
+		"description": "",
+		"scope": "source.eiffel"
+	},
+	"private_constructors": {
+		"prefix": "private constructors",
+		"body": "create { NONE }\r\n\t",
+		"description": "",
+		"scope": "source.eiffel"
+	},
+	"protected_features": {
+		"prefix": "protected features",
+		"body": "feature { ${1:TYPE} }\r\n\t$0",
+		"description": "",
+		"scope": "source.eiffel"
+	},
+	"protected_constructors": {
+		"prefix": "protected constructors",
+		"body": "create { ${1:TYPE} }\r\n\t$0",
+		"description": "",
+		"scope": "source.eiffel"
+	},
+	"protected_creates": {
+		"prefix": "protected constructors",
+		"body": "create { ${1:TYPE} }\r\n\t$0",
+		"description": "",
+		"scope": "source.eiffel"
+	},
+	"exclamation_mark": {
+		"prefix": "!",
+		"body": "attached",
+		"description": "",
+		"scope": "source.eiffel"
+	},
+	"question_mark": {
+		"prefix": "?",
+		"body": "detachable",
+		"description": "",
+		"scope": "source.eiffel"
 	}
 }

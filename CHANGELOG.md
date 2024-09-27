@@ -1,7 +1,9 @@
 # Change Log
 
-TODO: [Keep a Changelog](http://keepachangelog.com/)
+All notable changes to the "eiffel-language-support" extension will be documented in this file.
 
-## [Released]
+Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+
+## [Unreleased]
 
 - Initial release
