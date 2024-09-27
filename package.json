@@ -2,7 +2,11 @@
   "name": "eiffel-language-support",
   "displayName": "Eiffel Language Support",
   "description": "Eiffel Language Support - Syntax Highlighting",
-  "version": "0.0.1",
+  "repository": {
+    "url": "https://github.com/szeredniklaszlo/vsc-eiffel-language-support"
+  },
+  "version": "1.0.1",
+  "publisher": "laszloszerednik",
   "engines": {
     "vscode": "^1.73.0"
   },

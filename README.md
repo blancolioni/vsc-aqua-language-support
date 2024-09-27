@@ -1,65 +1,105 @@
-# eiffel-language-support README
+# Eiffel Language Support
 
-This is the README for your extension "eiffel-language-support". After writing up a brief description, we recommend including the following sections.
+This Visual Studio Code extension provides syntax highlighting and code snippets for Eiffel language development.
 
-## Features
+Once installed, files with the .e extension will automatically activate the Eiffel syntax highlighting and snippet
+support.
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## Syntax Highlighting
 
-For example if there is an image subfolder under your extension project workspace:
+The Eiffel language syntax is supported through a custom grammar definition. It highlights the following:
 
-\!\[feature X\]\(images/feature-x.png\)
+- Comments: Single-line comments start with `--`.
+  Keywords: Keywords such as `class`, `feature`, `do`, `end`, `if`, `else`, `from`, and more are highlighted.
+- Variables: All variable names that follow standard Eiffel naming conventions are highlighted.
+- Constants: Common constants like `True`, `False`, `Void`, `Result`, and `Current` are included.
+- String Literals: Double-quoted strings are highlighted, with escape sequences recognized within them.
+- Numbers: Numeric constants are highlighted.
+  Modifiers: Keywords like `deferred`, `expanded`, and storage modifiers are highlighted for better readability.
+- Class Definitions: The extension provides recognition for class structures, including inheritance and class-level
+  declarations.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Code Snippets
 
-## Requirements
+**C# / Java keywords** for snippets, just write the familiar keywords from your mind, and press tab.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+### Variables:
 
-## Extension Settings
+- var
+- null_var
+- const
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+### Assignments / conversions:
 
-For example:
+- assignment
+- cast
+- convert_from
+- convert_to
 
-This extension contributes the following settings:
+### Functions:
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+- fun / routine
+- once fun / once routine
 
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+### Branching and checks:
+- if
+- elif / elseif / else if
 
 ---
 
-## Working with Markdown
+- switch / inspect
+- case / when
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+---
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+- check
+- instanceof / check type
+- if not null / check not null
+- if attached / check attached
 
-## For more information
+---
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+- strip / only
 
-**Enjoy!**
+### Loops:
+- for / repeat
+- foreach / across
+- foreach all
+- foreach some
+- retry
+
+### Exceptions:
+- throw if null / throw if not attached / throw if detached
+
+### Classes:
+- class
+- expanded class
+- abstract class / deferrred class
+
+#### Class instantiation:
+- new statement / create statement
+- new expression / create expression
+
+#### Class variables:
+- property
+- attribute
+
+#### Class functions:
+- abstract fun / deferred routine
+- export fun / external routine
+
+---
+
+- init attribute
+- private features
+- private creates
+- private constructors
+- protected features
+- protected constructors
+- protected constructors
+
+### Other:
+- debug
+- indexing
+
+## Enjoy coding in Eiffel with enhanced productivity!

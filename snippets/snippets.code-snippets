@@ -114,7 +114,7 @@
 		"scope": "source.eiffel"
 	},
 	"deferred_class": {
-		"prefix": "deferrred class",
+		"prefix": "deferred class",
 		"body": "-- ${1:class_name}\r\n\r\ndeferred class\r\n\t${1/(.*)/\\U$0\\E/}\r\ninherit\r\n\r\nfeature\r\n\r\ninvariant\r\n\r\nend -- ${1/(.*)/\\U$0\\E/}\r\n",
 		"description": "deferred class",
 		"scope": "source.eiffel"
