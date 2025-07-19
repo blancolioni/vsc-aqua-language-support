@@ -3,384 +3,384 @@
 		"prefix": "assignment",
 		"body": "${1:writable} := ${2:expression}",
 		"description": "assignment",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"try-assignment": {
 		"prefix": "assignment",
 		"body": "${1:writable} ?= ${2:expression}",
 		"description": "assignment attempt",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"convert_from": {
 		"prefix": "convert_from",
 		"body": "${1:convert}\r\n\t${3:from_${2/(.*)/${1:/downcase}/}}( {${2:TYPE}} )",
 		"description": "",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"convert_to": {
 		"prefix": "convert_to",
 		"body": "${1:convert}\r\n\t${3:to_${2/(.*)/${1:/downcase}/}}: {${2:TYPE}}",
 		"description": "",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"cast": {
 		"prefix": "cast",
 		"body": "{TYPE} value",
 		"description": "",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"property": {
 		"prefix": "property",
 		"body": "${1:attribute_name}: attached ${2:TYPE} assign ${3:$1_setter}\r\n${3}(${4:${1}_}: like ${1}) do ${1} := ${4} end",
 		"description": "",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"attribute": {
 		"prefix": "attribute",
 		"body": "${1:attribute_name}: attached ${2:TYPE}",
 		"description": "attribute",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"var": {
 		"prefix": "var",
 		"body": "${1:variable}: attached ${2:TYPE}",
 		"description": "variable",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"null_var": {
 		"prefix": "null_var",
 		"body": "${1:variable}: detachable ${2:TYPE}",
 		"description": "detachable variable",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"const": {
 		"prefix": "const",
 		"body": "${1:constant}: attached ${2:TYPE} = ${3:value}",
 		"description": "constant",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"new_statement": {
 		"prefix": "new statement",
 		"body": "create${1:{${2:TYPE}\\}} ${3:writable}.${4:default_create}",
 		"description": "create",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"new_expression": {
 		"prefix": "new expression",
 		"body": "create{${1:TYPE}\\}.${2:default_create}",
 		"description": "create",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"create_statement": {
 		"prefix": "create statement",
 		"body": "create${1:{${2:TYPE}\\}} ${3:writable}.${4:default_create}",
 		"description": "create",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"create_expression": {
 		"prefix": "create expression",
 		"body": "create{${1:TYPE}\\}.${2:default_create}",
 		"description": "create",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"check": {
 		"prefix": "check",
 		"body": "check\r\n\t${1:assertion}\r\nend",
 		"description": "check",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"debug": {
 		"prefix": "debug",
 		"body": "debug${1: (${2:debug_key})}\r\n\t${3:instruction}\r\nend",
 		"description": "debug",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"class": {
 		"prefix": "class",
 		"body": "-- ${1:class_name}\r\n\r\nclass\r\n\t${1/(.*)/\\U$0\\E/}\r\ninherit\r\n\r\ncreate\r\n\r\nfeature\r\n\r\ninvariant\r\n\r\nend -- ${1/(.*)/\\U$0\\E/}\r\n",
 		"description": "class",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"expanded_class": {
 		"prefix": "expanded class",
 		"body": "-- ${1:class_name}\r\n\r\nexpanded class\r\n\t${1/(.*)/\\U$0\\E/}\r\ninherit\r\n\r\ncreate\r\n\r\nfeature\r\n\r\ninvariant\r\n\r\nend -- ${1/(.*)/\\U$0\\E/}\r\n",
 		"description": "expanded class",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"abstract_class": {
 		"prefix": "abstract class",
 		"body": "-- ${1:class_name}\r\n\r\ndeferred class\r\n\t${1/(.*)/\\U$0\\E/}\r\ninherit\r\n\r\nfeature\r\n\r\ninvariant\r\n\r\nend -- ${1/(.*)/\\U$0\\E/}\r\n",
 		"description": "deferred class",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"deferred_class": {
 		"prefix": "deferred class",
 		"body": "-- ${1:class_name}\r\n\r\ndeferred class\r\n\t${1/(.*)/\\U$0\\E/}\r\ninherit\r\n\r\nfeature\r\n\r\ninvariant\r\n\r\nend -- ${1/(.*)/\\U$0\\E/}\r\n",
 		"description": "deferred class",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"inspect": {
 		"prefix": "inspect",
 		"body": "inspect\r\n\t${1:expression}\r\nwhen ${2:choice} then\r\n\t${3:instruction}${4:\r\nelse\r\n\t${5:instruction}}\r\nend",
 		"description": "inspect",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"switch": {
 		"prefix": "switch",
 		"body": "inspect\r\n\t${1:expression}\r\nwhen ${2:choice} then\r\n\t${3:instruction}${4:\r\nelse\r\n\t${5:instruction}}\r\nend",
 		"description": "inspect",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 		"when": {
 		"prefix": "when",
 		"body": "when ${1:choice} then\r\n\t${2:instruction}",
 		"description": "when",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 		"case": {
 		"prefix": "case",
 		"body": "when ${1:choice} then\r\n\t${2:instruction}",
 		"description": "when",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"if": {
 		"prefix": "if",
-		"body": "if ${1:boolean_expression} then\r\n\t${2:instruction}${3:\r\nelseif ${4:boolean_expression} then\r\n\t${5:instruction}}${6:\r\nelse\r\n\t${7:instruction}}\r\nend",
+		"body": "if ${1:boolean_expression} then\r\n\t${2:instruction}${3:\r\nelsif ${4:boolean_expression} then\r\n\t${5:instruction}}${6:\r\nelse\r\n\t${7:instruction}}\r\nend",
 		"description": "if",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"elif": {
 		"prefix": "elif",
-		"body": "elseif ${1:boolean_expression} then\r\n\t${2:instruction}",
-		"description": "elseif",
-		"scope": "source.eiffel"
+		"body": "elsif ${1:boolean_expression} then\r\n\t${2:instruction}",
+		"description": "elsif",
+		"scope": "source.aqua"
 	},
-	"elseif": {
-		"prefix": "elseif",
-		"body": "elseif ${1:boolean_expression} then\r\n\t${2:instruction}",
-		"description": "elseif",
-		"scope": "source.eiffel"
+	"elsif": {
+		"prefix": "elsif",
+		"body": "elsif ${1:boolean_expression} then\r\n\t${2:instruction}",
+		"description": "elsif",
+		"scope": "source.aqua"
 	},
 		"else_if": {
 		"prefix": "else if",
-		"body": "elseif ${1:boolean_expression} then\r\n\t${2:instruction}",
-		"description": "elseif",
-		"scope": "source.eiffel"
+		"body": "elsif ${1:boolean_expression} then\r\n\t${2:instruction}",
+		"description": "elsif",
+		"scope": "source.aqua"
 	},
 	"once_fun": {
 		"prefix": "once fun",
 		"body": "${1:routine}${2: (${3:args}: attached ${4:TYPE})}${5:: attached ${6:TYPE}} ${7:\r\n\trequire\r\n\t\t${8:assertion}}${9:\r\n\tlocal\r\n\t\t${10:l}: attached ${11:TYPE}} \r\n\tonce\r\n\t\t${12:instruction}${13:\r\n\tensure\r\n\t\t${14:assertion}}${15:\r\n\trescue\r\n\t\t${16:instruction}}\r\n\tend -- $1",
 		"description": "once routine",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"once_routine": {
 		"prefix": "once routine",
 		"body": "${1:routine}${2: (${3:args}: attached ${4:TYPE})}${5:: attached ${6:TYPE}} ${7:\r\n\trequire\r\n\t\t${8:assertion}}${9:\r\n\tlocal\r\n\t\t${10:l}: attached ${11:TYPE}} \r\n\tonce\r\n\t\t${12:instruction}${13:\r\n\tensure\r\n\t\t${14:assertion}}${15:\r\n\trescue\r\n\t\t${16:instruction}}\r\n\tend -- $1",
 		"description": "once routine",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"fun": {
 		"prefix": "fun",
 		"body": "${1:routine}${2: (${3:args}: attached ${4:TYPE})}${5:: attached ${6:TYPE}} ${7:\r\n\trequire\r\n\t\t${8:assertion}}${9:\r\n\tlocal\r\n\t\t${10:l}: attached ${11:TYPE}} \r\n\tdo\r\n\t\t${12:instruction}${13:\r\n\tensure\r\n\t\t${14:assertion}}${15:\r\n\trescue\r\n\t\t${16:instruction}}\r\n\tend -- $1",
 		"description": "routine",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"routine": {
 		"prefix": "routine",
 		"body": "${1:routine}${2: (${3:args}: attached ${4:TYPE})}${5:: attached ${6:TYPE}} ${7:\r\n\trequire\r\n\t\t${8:assertion}}${9:\r\n\tlocal\r\n\t\t${10:l}: attached ${11:TYPE}} \r\n\tdo\r\n\t\t${12:instruction}${13:\r\n\tensure\r\n\t\t${14:assertion}}${15:\r\n\trescue\r\n\t\t${16:instruction}}\r\n\tend -- $1",
 		"description": "routine",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"deferred_routine": {
 		"prefix": "deferred routine",
 		"body": "${1:routine}${2: (${3:args}: attached ${4:TYPE})}${5:: attached ${6:TYPE}} ${7:\r\n\trequire\r\n\t\t${8:assertion}}\r\n\tdeferred${9:\r\n\tensure\r\n\t\t${10:assertion}}\r\n\tend -- $1",
 		"description": "deferred routine",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"abstract_fun": {
 		"prefix": "abstract fun",
 		"body": "${1:routine}${2: (${3:args}: attached ${4:TYPE})}${5:: attached ${6:TYPE}} ${7:\r\n\trequire\r\n\t\t${8:assertion}}\r\n\tdeferred${9:\r\n\tensure\r\n\t\t${10:assertion}}\r\n\tend -- $1",
 		"description": "deferred routine",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"external_routine": {
 		"prefix": "external routine",
 		"body": "${1:routine}${2: (${3:args}: attached ${4:TYPE})}${5:: attached ${6:TYPE}} ${7:\r\n\trequire\r\n\t\t${8:assertion}}\r\n\texternal\r\n\t\t\"${9:language}\"${10:\r\n\talias\r\n\t\t\"${11:external_name}\"}${12:\r\n\tensure\r\n\t\t${13:assertion}}\r\n\tend -- $1",
 		"description": "external routine",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"export_fun": {
 		"prefix": "export fun",
 		"body": "${1:routine}${2: (${3:args}: attached ${4:TYPE})}${5:: attached ${6:TYPE}} ${7:\r\n\trequire\r\n\t\t${8:assertion}}\r\n\texternal\r\n\t\t\"${9:language}\"${10:\r\n\talias\r\n\t\t\"${11:external_name}\"}${12:\r\n\tensure\r\n\t\t${13:assertion}}\r\n\tend -- $1",
 		"description": "external routine",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"indexing": {
 		"prefix": "indexing",
 		"body": "Indexing\r\n\tProject: \"$TM_FILEPATH\"\r\n\tFile: \"$TM_FILENAME\"\r\n\tDescription: \"${1:description}\"\r\n\tAuthor: \"${2:$USER}\"\r\n\tCopyright: \"© 2006 ${3:${TM_ORGANIZATION_NAME}}\"\r\n\tVersion: 1.0\r\n\tDate: \"`date`\"\r\n\tKeywords: ${4:keywords}\r\n",
 		"description": "indexing",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"for": {
 		"prefix": "for",
 		"body": "from\r\n\t${1:init_instructions}${2:\r\ninvariant\r\n\t${3:truth_before_and_after_every_iteration}}${4:\r\nvariant\r\n\t${5:decreasing_non_negative_expression}}\r\nuntil\r\n\t${6:boolean_expression}\r\nloop\r\n\t${7:instruction}\r\nend",
 		"description": "loop",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"repeat": {
 		"prefix": "repeat",
 		"body": "from\r\n\t${1:init_instructions}${2:\r\ninvariant\r\n\t${3:truth_before_and_after_every_iteration}}${4:\r\nvariant\r\n\t${5:decreasing_non_negative_expression}}\r\nuntil\r\n\t${6:boolean_expression}\r\nloop\r\n\t${7:instruction}\r\nend",
 		"description": "loop",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"foreach": {
 		"prefix": "foreach",
 		"body": "across\r\n\t${1:list} as ${2:i}\r\nloop\r\n\t${3:${2}.item}\r\nend",
 		"description": "loop",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"across": {
 		"prefix": "across",
 		"body": "across\r\n\t${1:list} as ${2:i}\r\nloop\r\n\t${3:${2}.item}\r\nend",
 		"description": "loop",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"foreach_all": {
 		"prefix": "foreach all",
 		"body": "across ${1:list} as ${2:i} all ${3:${2}.item} end",
 		"description": "all",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"foreach_some": {
 		"prefix": "foreach some",
 		"body": "across ${1:list} as ${2:i} some ${3:${2}.item} end",
 		"description": "some",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"retry": {
 		"prefix": "retry",
 		"body": "retry",
 		"description": "retry",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"check_type": {
 		"prefix": "check type",
 		"body": "check attached { ${1:TYPE} } ${2:variable} as ${3:${2}_${1/(.*)/${1:/downcase}/}}} then\r\n\t${4:instruction}\r\nend",
 		"description": "",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"instanceof": {
 		"prefix": "instanceof",
 		"body": "check attached { ${1:TYPE} } ${2:variable} as ${3:${2}_${1/(.*)/${1:/downcase}/}}} then\r\n\t${4:instruction}\r\nend",
 		"description": "",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"check_not_null": {
 		"prefix": "check not null",
 		"body": "check attached ${1:variable} as ${2:attached_${1}} then\r\n\t${3:instruction}\r\nend",
 		"description": "",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"check_attached": {
 		"prefix": "check attached",
 		"body": "check attached ${1:variable} as ${2:attached_${1}} then\r\n\t${3:instruction}\r\nend",
 		"description": "",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"if_not_null": {
 		"prefix": "if not null",
 		"body": "if attached ${1:variable} as ${2:attached_${1}} then\r\n\t${3:instruction}\r\nend",
 		"description": "",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"if_attached": {
 		"prefix": "if attached",
 		"body": "if attached ${1:variable} as ${2:attached_${1}} then\r\n\t${3:instruction}\r\nend",
 		"description": "",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"throw_if_null": {
 		"prefix": "throw if null",
 		"body": "check attached ${1:variable} as ${2:attached_${1}} then\r\n\t${3:instruction}\r\nend",
 		"description": "",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"throw_if_not_attached": {
 		"prefix": "throw if not attached",
 		"body": "check attached ${1:variable} as ${2:attached_${1}} then\r\n\t${3:instruction}\r\nend",
 		"description": "",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"throw_if_detached": {
 		"prefix": "throw if detached",
 		"body": "check attached ${1:variable} as ${2:attached_${1}} then\r\n\t${3:instruction}\r\nend",
 		"description": "",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"strip": {
 		"prefix": "strip",
 		"body": "strip(${1:attributes_separated_by_comma}) ~ old strip(${1})",
 		"description": "",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"only": {
 		"prefix": "only",
 		"body": "strip(${1:attributes_separated_by_comma}) ~ old strip(${1})",
 		"description": "",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"init_attribute": {
 		"prefix": "init attribute",
 		"body": "${1:attribute_name}: attached ${2:TYPE} attribute Result := create{${2}}${3:.${4:default_create}} end",
 		"description": "",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"private_features": {
 		"prefix": "private features",
 		"body": "feature { NONE }\r\n\t",
 		"description": "",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"private_creates": {
 		"prefix": "private creates",
 		"body": "create { NONE }\r\n\t",
 		"description": "",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"private_constructors": {
 		"prefix": "private constructors",
 		"body": "create { NONE }\r\n\t",
 		"description": "",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"protected_features": {
 		"prefix": "protected features",
 		"body": "feature { ${1:TYPE} }\r\n\t$0",
 		"description": "",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"protected_constructors": {
 		"prefix": "protected constructors",
 		"body": "create { ${1:TYPE} }\r\n\t$0",
 		"description": "",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"protected_creates": {
 		"prefix": "protected constructors",
 		"body": "create { ${1:TYPE} }\r\n\t$0",
 		"description": "",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"exclamation_mark": {
 		"prefix": "!",
 		"body": "attached",
 		"description": "",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	},
 	"question_mark": {
 		"prefix": "?",
 		"body": "detachable",
 		"description": "",
-		"scope": "source.eiffel"
+		"scope": "source.aqua"
 	}
 }

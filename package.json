@@ -1,12 +1,11 @@
 {
-  "name": "eiffel-language-support",
-  "displayName": "Eiffel Language Support",
-  "description": "Eiffel Language Support - Syntax Highlighting",
+  "name": "aqua-language-support",
+  "displayName": "Aqua Language Support",
+  "description": "Aqua Language Support - Syntax Highlighting",
   "repository": {
-    "url": "https://github.com/szeredniklaszlo/vsc-eiffel-language-support"
   },
   "version": "1.0.1",
-  "publisher": "laszloszerednik",
+  "publisher": "blancolioni",
   "engines": {
     "vscode": "^1.73.0"
   },
@@ -17,27 +16,27 @@
   "contributes": {
     "languages": [
       {
-        "id": "eiffel",
+        "id": "aqua",
         "aliases": [
-          "Eiffel",
-          "eiffel"
+          "Aqua",
+          "aqua"
         ],
         "extensions": [
-          ".e"
+          ".aqua"
         ],
         "configuration": "./language-configuration.json"
       }
     ],
     "grammars": [
       {
-        "language": "eiffel",
-        "scopeName": "source.eiffel",
-        "path": "./syntaxes/eiffel.tmLanguage"
+        "language": "aqua",
+        "scopeName": "source.aqua",
+        "path": "./syntaxes/aqua.tmLanguage"
       }
     ],
     "snippets": [
       {
-        "language": "eiffel",
+        "language": "aqua",
         "path": "./snippets/snippets.code-snippets"
       }
     ]

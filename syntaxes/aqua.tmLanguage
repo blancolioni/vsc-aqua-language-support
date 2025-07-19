@@ -4,7 +4,7 @@
 <dict>
 	<key>fileTypes</key>
 	<array>
-		<string>e</string>
+		<string>aqua</string>
 	</array>
 	<key>keyEquivalent</key>
 	<string>^~E</string>
@@ -20,7 +20,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.whitespace.comment.leading.eiffel</string>
+					<string>punctuation.whitespace.comment.leading.aqua</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -35,33 +35,33 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.comment.eiffel</string>
+							<string>punctuation.definition.comment.aqua</string>
 						</dict>
 					</dict>
 					<key>end</key>
 					<string>\n</string>
 					<key>name</key>
-					<string>comment.line.double-dash.eiffel</string>
+					<string>comment.line.double-dash.aqua</string>
 				</dict>
 			</array>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(Indexing|indexing|deferred|expanded|class|inherit|rename|as|export|undefine|redefine|select|all|create|creation|feature|prefix|infix|separate|frozen|obsolete|local|is|unique|do|once|external|alias|require|ensure|invariant|variant|rescue|retry|like|check|if|else|elseif|then|inspect|when|from|loop|until|debug|not|or|and|xor|implies|old|end|attached|detachable|attribute|across|only|strip|assign|convert)\b</string>
+			<string>\b(Indexing|indexing|deferred|expanded|class|inherit|rename|as|export|undefine|redefine|select|all|create|creation|feature|prefix|infix|separate|frozen|obsolete|local|is|unique|do|once|external|alias|require|ensure|invariant|variant|rescue|retry|like|check|if|else|elsif|then|inspect|when|from|loop|until|debug|not|or|and|xor|implies|old|end|attached|detachable|attribute|across|only|strip|assign|convert)\b</string>
 			<key>name</key>
-			<string>keyword.control.eiffel</string>
+			<string>keyword.control.aqua</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>[a-zA-Z_][a-zA-Z0-9_]+</string>
 			<key>name</key>
-			<string>variable.other.eiffel</string>
+			<string>variable.other.aqua</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>\b(True|true|False|false|Void|void|Result|result|Precursor|precursor|Current|current)\b</string>
 			<key>name</key>
-			<string>constant.language.eiffel</string>
+			<string>constant.language.aqua</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -69,7 +69,7 @@
 			<key>end</key>
 			<string>end</string>
 			<key>name</key>
-			<string>meta.features.eiffel</string>
+			<string>meta.features.aqua</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -77,7 +77,7 @@
 			<key>end</key>
 			<string>(ensure|end)</string>
 			<key>name</key>
-			<string>meta.effective_routine_body.eiffel</string>
+			<string>meta.effective_routine_body.aqua</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -85,7 +85,7 @@
 			<key>end</key>
 			<string>end</string>
 			<key>name</key>
-			<string>meta.rescue.eiffel</string>
+			<string>meta.rescue.aqua</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -95,7 +95,7 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.string.begin.eiffel</string>
+					<string>punctuation.definition.string.begin.aqua</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -105,18 +105,18 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.string.end.eiffel</string>
+					<string>punctuation.definition.string.end.aqua</string>
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>string.quoted.double.eiffel</string>
+			<string>string.quoted.double.aqua</string>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>match</key>
 					<string>\\.</string>
 					<key>name</key>
-					<string>constant.character.escape.eiffel</string>
+					<string>constant.character.escape.aqua</string>
 				</dict>
 			</array>
 		</dict>
@@ -124,13 +124,13 @@
 			<key>match</key>
 			<string>[0-9]+</string>
 			<key>name</key>
-			<string>constant.numeric.eiffel</string>
+			<string>constant.numeric.aqua</string>
 		</dict>
 		<dict>
 			<key>match</key>
 			<string>\b(deferred|expanded)\b</string>
 			<key>name</key>
-			<string>storage.modifier.eiffel</string>
+			<string>storage.modifier.aqua</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -143,13 +143,13 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>storage.modifier.eiffel</string>
+					<string>storage.modifier.aqua</string>
 				</dict>
 			</dict>
 			<key>end</key>
 			<string>(?=end)</string>
 			<key>name</key>
-			<string>meta.definition.class.eiffel</string>
+			<string>meta.definition.class.aqua</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -215,7 +215,7 @@
 		</dict>
 	</dict>
 	<key>scopeName</key>
-	<string>source.eiffel</string>
+	<string>source.aqua</string>
 	<key>uuid</key>
 	<string>34672373-DED9-45B8-AF7E-2E4B6C3D6B76</string>
 </dict>
