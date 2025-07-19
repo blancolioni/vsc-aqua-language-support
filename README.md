@@ -1,13 +1,20 @@
-# Eiffel Language Support
+# Aqua Language Support
 
-This Visual Studio Code extension provides syntax highlighting and code snippets for Eiffel language development.
+This Visual Studio Code extension provides syntax highlighting and code snippets for Aqua language development.
 
-Once installed, files with the .e extension will automatically activate the Eiffel syntax highlighting and snippet
+Once installed, files with the .aqua extension will automatically activate the Aqua syntax highlighting and snippet
 support.
+
+Aqua is the extension language for the [Aquarius](https://github.com/blancolioni/aquarius) ebnf compiler.
+It is a dialect of [Eiffel](https://www.eiffel.org/).
+The most significant change is that classes are now hierarchical.
+
+This is a fork of the wonderful [Eiffel extension](https://github.com/szeredniklaszlo/vsc-eiffel-language-support) 
+by [szeredniklaszlo](https://github.com/szeredniklaszlo).
 
 ## Syntax Highlighting
 
-The Eiffel language syntax is supported through a custom grammar definition. It highlights the following:
+The Aqua language syntax is supported through a custom grammar definition. It highlights the following:
 
 - Comments: Single-line comments start with `--`.
   Keywords: Keywords such as `class`, `feature`, `do`, `end`, `if`, `else`, `from`, and more are highlighted.
@@ -102,4 +109,4 @@ The Eiffel language syntax is supported through a custom grammar definition. It 
 - debug
 - indexing
 
-## Enjoy coding in Eiffel with enhanced productivity!
+## Enjoy coding in Aqua with enhanced productivity!
